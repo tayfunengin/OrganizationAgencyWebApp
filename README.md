@@ -65,5 +65,9 @@ Not: Uygulama kullanılmaya başlanıldığında sadece tamamlanan organizasyonl
 Sisteme eklenen modeller için de admin user'lar oluşturabilir. Model rolüne sahip kullanıcılar giriş yağtığında kendi bilgilerinin olduğu admin panaline yönlendirilirler.
 Sitenin register kısmından üye oluduğunda member rölü atanır. Bu kullanıcı tanıtım sitesi üzerinden modellere erişim yetkisi kazanır.
 
+## Contact
 
+Bana engin.tayfun@gmail.com üzerinden ulaşabilirsiniz.
+
+Teşekkürler.
 
