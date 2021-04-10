@@ -54,7 +54,7 @@ Assign Model butonuna tıkladığınızda sadece organizasyonun gerçekleşeceğ
 Istanbul'daki organizasyonlar şehiriçi, diğer şehirdeki organziasyonlar şehirdışı olarak kabul edilmiştir.
 Şehiriçi organizasyonlarda modellere günlük 40 TL yemek ücreti ödenir.
 Şehirdışı organizasyonlarda modellere 80TL (2 öğün) yemek ücreti ve günlük 150TL konaklama ücreti ödenir.
-Muhsabese yetkilisi organizyon listesinde See Repor butonuna tıkladığında o organizasyon için hangi modele ne kadar ödeme yapması gerektiğini, yapılan masrafları ve kazanılan geliri görebilir.
+Muhsabese yetkilisi organizyon listesinde See Report butonuna tıkladığında o organizasyon için hangi modele ne kadar ödeme yapması gerektiğini, yapılan masrafları ve kazanılan geliri görebilir.
 ![image](https://user-images.githubusercontent.com/71972947/114286723-fce45c80-9a69-11eb-9a51-ccd5008b7c21.png)
 
 Aynı şekilde model bazlı da rapor alınabilir.
