@@ -47,7 +47,7 @@ Organization List kısmından gerçekleşecek olan orgnizasyonları sisteme ekle
 
 Assign Model butonuna tıkladığınızda sadece organizasyonun gerçekleşeceği tarihlerde uygun olan modeller listelenir. Organization List kısmında organizasyon ismine tıkladığınızda detaylarına ulaşabilir, atanan modelleri geri alabilirsiniz.
 
-![image](https://user-images.githubusercontent.com/71972947/114286509-053b9800-9a68-11eb-90cb-7514dd60e072.png)
+![image](https://user-images.githubusercontent.com/71972947/114286736-17b6d100-9a6a-11eb-85b9-bcba914db479.png)
 
 Şimdi ise report rolüne sahip kullanıcı ile giriş yapıp muhasebe satış rapolarını görüntüleyebilirsiniz.
 
@@ -55,9 +55,15 @@ Istanbul'daki organizasyonlar şehiriçi, diğer şehirdeki organziasyonlar şeh
 Şehiriçi organizasyonlarda modellere günlük 40 TL yemek ücreti ödenir.
 Şehirdışı organizasyonlarda modellere 80TL (2 öğün) yemek ücreti ve günlük 150TL konaklama ücreti ödenir.
 Muhsabese yetkilisi organizyon listesinde See Repor butonuna tıkladığında o organizasyon için hangi modele ne kadar ödeme yapması gerektiğini, yapılan masrafları ve kazanılan geliri görebilir.
-![image](https://user-images.githubusercontent.com/71972947/114286632-349ed480-9a69-11eb-9d6b-454288c0bffc.png)
+![image](https://user-images.githubusercontent.com/71972947/114286723-fce45c80-9a69-11eb-9a51-ccd5008b7c21.png)
 
+Aynı şekilde model bazlı da rapor alınabilir.
+![image](https://user-images.githubusercontent.com/71972947/114286754-45037f00-9a6a-11eb-90e6-74e33909ac0f.png)
 
-ORganizastion Repo
+Not: Uygulama kullanılmaya başlanıldığında sadece tamamlanan organizasyonlar rapor kısmında gösterilebilir.
+
+Sisteme eklenen modeller için de admin user'lar oluşturabilir. Model rolüne sahip kullanıcılar giriş yağtığında kendi bilgilerinin olduğu admin panaline yönlendirilirler.
+Sitenin register kısmından üye oluduğunda member rölü atanır. Bu kullanıcı tanıtım sitesi üzerinden modellere erişim yetkisi kazanır.
+
 
 
