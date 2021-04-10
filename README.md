@@ -13,10 +13,16 @@ Organizasyon ve çalışan bilgilerinin kayıtlarının tutulması, organizasyon
 
 Uygulama Code First Data-Access yönetimi ile hazırlanmıştır. Connection string : "DefaultConnection": "server=.;database=OrganizationAgencyDB;trusted_connection=true;MultipleActiveResultSets=true;", şeklindedir. 
 
-### Roller
-* Admin
-* Organization
-* Report
-* Model
-* Member
+#### Roller
+* Admin - Kullanıcı ve rol tanımlayabilir. Organiasyon ve modellerin detaylarını görüntüleyebilir. Organizasyon ve modele göre satış raporlarını görebilir.
+* Organization - Organizasyon ve modelleri sisteme tanımla ve CRUD işlemlerini yapabilme yetkisi vardır. Organizasyonlara model atamasını yapar. 
+* Report - Muhasebe satış rapolarını görüntüler.
+* Model - Kendisine ait profil sayfasına erişebilir ve temel bilgilerini güncelleyebilir.
+* Member - İnternet sitesi üzerinden kayıt olan kullanıcılara verilen yetki tipidir. Tanıtım sitesindeki modeller kısmına erişebilmek için üye olmak gerekmektedir.
 
+## Uygulamayı kullanabilmek için öncelikle user ve rolleri tanımlamak gerekmektedir. Bunun uygulamayı çalıştırdıktan sonra url'e /Admin/Role ekleyip bu sayfaya gidin.
+https://localhost:xxxxx/Admin/Role
+
+
+
+    
