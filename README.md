@@ -5,5 +5,5 @@
 
 Organizasyon ve çalışan bilgilerinin kayıtlarının tutulması, organizasyonlarda hangi modellerin çalıştığının takibinin yapılması, organizasyonun muhasebe kayıtlarının tutulması gibi amaçlar için oluşturulmuştur. Aynı zamanda firmanın tanıtımını yapabileceği bir web sitesi de hazırlanmıştır.
 
-##Teknoloji
-*.Net Core
+## Teknoloji
+* .Net Core
