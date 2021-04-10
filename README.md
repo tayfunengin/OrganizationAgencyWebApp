@@ -49,7 +49,15 @@ Assign Model butonuna tıkladığınızda sadece organizasyonun gerçekleşeceğ
 
 ![image](https://user-images.githubusercontent.com/71972947/114286509-053b9800-9a68-11eb-90cb-7514dd60e072.png)
 
-Şimdi ise report rolüne sahip kullanıcı ile giriş yapıp muhasebe rapolarını görüntüleyebilirsiniz.
+Şimdi ise report rolüne sahip kullanıcı ile giriş yapıp muhasebe satış rapolarını görüntüleyebilirsiniz.
 
+Istanbul'daki organizasyonlar şehiriçi, diğer şehirdeki organziasyonlar şehirdışı olarak kabul edilmiştir.
+Şehiriçi organizasyonlarda modellere günlük 40 TL yemek ücreti ödenir.
+Şehirdışı organizasyonlarda modellere 80TL (2 öğün) yemek ücreti ve günlük 150TL konaklama ücreti ödenir.
+Muhsabese yetkilisi organizyon listesinde See Repor butonuna tıkladığında o organizasyon için hangi modele ne kadar ödeme yapması gerektiğini, yapılan masrafları ve kazanılan geliri görebilir.
+![image](https://user-images.githubusercontent.com/71972947/114286632-349ed480-9a69-11eb-9d6b-454288c0bffc.png)
+
+
+ORganizastion Repo
 
 
