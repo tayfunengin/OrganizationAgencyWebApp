@@ -28,17 +28,28 @@ Aşağıdaki rolleri oluşturun.
 ![image](https://user-images.githubusercontent.com/71972947/114285297-d8cf4e00-9a5e-11eb-9968-369211c8d0a3.png)
 Şimdi admin, organization ve report rolleri için user oluşturabilirsiniz. Şuan sistemde kayıtlı herhangi bir modelimiz olmadığı için model rolüne sahip bir user ekleyemeyiz. Organizasyon rolüne sahip kullanıcı sisteme model ekledikten sonra admin bu model için aynı e-mail adresini kullanarak bir user oluşturabilir. Modelin isim ve soyismi yanlış yazılsa bile uygulama user oluşturken düzeltecektir.
 
-Ana sayfadaki login kısmından giriş yapıldığında kullanıcı sahip olduğu role göre ilgili admin paneline yönlendirilir. Home butonu ile ana sayfaya geri dönülebilir. Yetki tipinize göre admin paneline geri dönüş yapabileceğiniz button  ve butonu sağ üstte çıkar.
+Ana sayfadaki login kısmından giriş yapıldığında kullanıcı sahip olduğu role göre ilgili admin paneline yönlendirilir. Home butonu ile ana sayfaya geri dönülebilir. Yetki tipinize göre admin paneline geri dönüş yapabileceğiniz button ve logout butonu sağ üstte çıkar.
 
 Öncelikle organizasyon yetkisine sahip kullanıcı ile giriş yapın. Model list kısmından uygulamaya modelleri tanımayabilirsiniz. 
 Modeller 3 farklı kategoriye ayrılmaktadır. Modellere her organizasyon için ayrı, günlük ödeme yapılmaktadır. Günlük ücretler aşağıdaki gibidir:
 * One - Günlük ücreti 200 TL
 * Two - Günlük ücreti 400 TL
 * Three - Organizasyon için alınan ücretin %20'si o organizasyonda çalışan kategori 3 çalışanları arasında paylaştırılır.
+ 
 Model ekledikten sonra details butonuna tıkladığınızda modelin tüm detaylarına, bugüne kadar katıldığı tüm organizasyon bilgilerine ulaşılabilir. Photo Gallery kısmından yeni fotoğraflar eklenebilir. Modelin galerisine eklenen fotoğraflar tanıtım sayfasında modeller kısmında da siteye üye olan kullanıcılara gösterilir.
 
 ![image](https://user-images.githubusercontent.com/71972947/114286132-bdffd800-9a64-11eb-87f9-db20df9f5fb4.png)
 
+Organization List kısmından gerçekleşecek olan orgnizasyonları sisteme ekleyebilirsiniz. Organizasyon statüleri 3 tanedir:
+* Pending - Heünüz başlamamış olanlar
+* Active - Başlamış ama henüz tamamlanmamış olanlar
+* Completed - Tamamlanmış organizasyonlar
+
+Assign Model butonuna tıkladığınızda sadece organizasyonun gerçekleşeceği tarihlerde uygun olan modeller listelenir. Organization List kısmında organizasyon ismine tıkladığınızda detaylarına ulaşabilir, atanan modelleri geri alabilirsiniz.
+
+![image](https://user-images.githubusercontent.com/71972947/114286509-053b9800-9a68-11eb-90cb-7514dd60e072.png)
+
+Şimdi ise report rolüne sahip kullanıcı ile giriş yapıp muhasebe rapolarını görüntüleyebilirsiniz.
 
 
 
