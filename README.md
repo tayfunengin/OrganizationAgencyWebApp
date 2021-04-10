@@ -20,7 +20,8 @@ Uygulama Code First Data-Access yönetimi ile hazırlanmıştır. Connection str
 * Model - Kendisine ait profil sayfasına erişebilir ve temel bilgilerini güncelleyebilir.
 * Member - İnternet sitesi üzerinden kayıt olan kullanıcılara verilen yetki tipidir. Tanıtım sitesindeki modeller kısmına erişebilmek için üye olmak gerekmektedir.
 
-## Uygulamayı kullanabilmek için öncelikle user ve rolleri tanımlamak gerekmektedir. Bunun uygulamayı çalıştırdıktan sonra url'e /Admin/Role ekleyip bu sayfaya gidin.
+## 
+Uygulamayı kullanabilmek için öncelikle user ve rolleri tanımlamak gerekmektedir. Bunun uygulamayı çalıştırdıktan sonra url'e /Admin/Role ekleyip bu sayfaya gidin.
 https://localhost:xxxxx/Admin/Role
 
 
