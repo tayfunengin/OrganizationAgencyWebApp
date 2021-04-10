@@ -24,5 +24,5 @@ Uygulama Code First Data-Access yönetimi ile hazırlanmıştır. Connection str
 Uygulamayı kullanabilmek için öncelikle user ve rolleri tanımlamak gerekmektedir. Bunun uygulamayı çalıştırdıktan sonra url'e /Admin/Role ekleyip bu sayfaya gidin.
 https://localhost:xxxxx/Admin/Role
 
-    ![image](https://user-images.githubusercontent.com/71972947/114285144-76298280-9a5d-11eb-838d-104cb2d2683c.png)
+![image](https://user-images.githubusercontent.com/71972947/114285297-d8cf4e00-9a5e-11eb-9968-369211c8d0a3.png)
 
