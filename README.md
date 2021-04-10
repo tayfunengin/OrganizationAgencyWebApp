@@ -62,8 +62,8 @@ Aynı şekilde model bazlı da rapor alınabilir.
 
 Not: Uygulama kullanılmaya başlanıldığında sadece tamamlanan organizasyonlar rapor kısmında gösterilebilir.
 
-Sisteme eklenen modeller için de admin user'lar oluşturabilir. Model rolüne sahip kullanıcılar giriş yağtığında kendi bilgilerinin olduğu admin panaline yönlendirilirler.
-Sitenin register kısmından üye oluduğunda member rölü atanır. Bu kullanıcı tanıtım sitesi üzerinden modellere erişim yetkisi kazanır.
+Sisteme eklenen modeller için de admin, user'lar oluşturabilir. Model rolüne sahip kullanıcılar giriş yağtığında kendi bilgilerinin olduğu admin panaline yönlendirilirler.
+Sitenin register kısmından üye olunduğunda member rölü atanır. Bu kullanıcı tanıtım sitesi üzerinden modellere erişim yetkisi kazanır.
 
 ## Contact
 
