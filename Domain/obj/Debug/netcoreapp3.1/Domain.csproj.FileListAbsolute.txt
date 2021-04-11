@@ -1,0 +1,18 @@
+C:\Users\Tayfun\source\repos\OrganizationAgencyWebApplication\Domain\bin\Debug\netcoreapp3.1\Domain.deps.json
+C:\Users\Tayfun\source\repos\OrganizationAgencyWebApplication\Domain\bin\Debug\netcoreapp3.1\Domain.dll
+C:\Users\Tayfun\source\repos\OrganizationAgencyWebApplication\Domain\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\Users\Tayfun\source\repos\OrganizationAgencyWebApplication\Domain\obj\Debug\netcoreapp3.1\Domain.csprojAssemblyReference.cache
+C:\Users\Tayfun\source\repos\OrganizationAgencyWebApplication\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfoInputs.cache
+C:\Users\Tayfun\source\repos\OrganizationAgencyWebApplication\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfo.cs
+C:\Users\Tayfun\source\repos\OrganizationAgencyWebApplication\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Tayfun\source\repos\OrganizationAgencyWebApplication\Domain\obj\Debug\netcoreapp3.1\Domain.dll
+C:\Users\Tayfun\source\repos\OrganizationAgencyWebApplication\Domain\obj\Debug\netcoreapp3.1\Domain.pdb
+C:\Users\Tayfun\Documents\.NET EĞİTİM\.NET Bitirme Projesi\OrganizationAgencyWebApplication\Domain\bin\Debug\netcoreapp3.1\Domain.deps.json
+C:\Users\Tayfun\Documents\.NET EĞİTİM\.NET Bitirme Projesi\OrganizationAgencyWebApplication\Domain\bin\Debug\netcoreapp3.1\Domain.dll
+C:\Users\Tayfun\Documents\.NET EĞİTİM\.NET Bitirme Projesi\OrganizationAgencyWebApplication\Domain\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\Users\Tayfun\Documents\.NET EĞİTİM\.NET Bitirme Projesi\OrganizationAgencyWebApplication\Domain\obj\Debug\netcoreapp3.1\Domain.csprojAssemblyReference.cache
+C:\Users\Tayfun\Documents\.NET EĞİTİM\.NET Bitirme Projesi\OrganizationAgencyWebApplication\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfoInputs.cache
+C:\Users\Tayfun\Documents\.NET EĞİTİM\.NET Bitirme Projesi\OrganizationAgencyWebApplication\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfo.cs
+C:\Users\Tayfun\Documents\.NET EĞİTİM\.NET Bitirme Projesi\OrganizationAgencyWebApplication\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Tayfun\Documents\.NET EĞİTİM\.NET Bitirme Projesi\OrganizationAgencyWebApplication\Domain\obj\Debug\netcoreapp3.1\Domain.dll
+C:\Users\Tayfun\Documents\.NET EĞİTİM\.NET Bitirme Projesi\OrganizationAgencyWebApplication\Domain\obj\Debug\netcoreapp3.1\Domain.pdb
