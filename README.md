@@ -43,7 +43,7 @@ Model ekledikten sonra details butonuna tıkladığınızda modelin tüm detayla
 ![image](https://user-images.githubusercontent.com/71972947/114290034-265eb180-9a85-11eb-9547-51f301a2cf49.png)
 
 Organization List kısmından gerçekleşecek olan orgnizasyonları sisteme ekleyebilirsiniz. Organizasyon statüleri 3 tanedir:
-* Pending - Heünüz başlamamış olanlar
+* Pending - Henüz başlamamış olanlar
 * Active - Başlamış ama henüz tamamlanmamış olanlar
 * Completed - Tamamlanmış organizasyonlar
 
