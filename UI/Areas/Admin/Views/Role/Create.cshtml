@@ -1,0 +1,33 @@
+﻿@model AppUserRole
+@{
+    ViewData["Title"] = "Create Role";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="card col-lg-6">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-9">
+                    <span>Create Role</span>
+                </div>
+                <div class="col-md-3 text-right">
+                    <a asp-action="Index" asp-controller="Role" class="btn btn-default btn-sm">Back to List</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">            
+                <form asp-action="Create" asp-controller="Role" method="post">
+                    <div class="form-group">
+                        <label>Role Name:</label>
+                        <input asp-for="Name" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>Description:</label>
+                        <input asp-for="Description" type="text" class="form-control" />
+                    </div>
+                    <button class="btn btn-primary" type="submit">Create Role</button>
+                </form>          
+        </div>
+    </div>
+</div>

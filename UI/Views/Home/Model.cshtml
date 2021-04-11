@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Model>
+@{
+    ViewData["Title"] = "Model";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="jumbotron" style="background: aliceblue";>
+
+    <div class="container mt-4">
+        <h4>Our Models</h4>
+    </div>
+
+</div>
+
+
+<div class="container model">
+
+    <div class="row">
+
+        @foreach (var item in Model)
+        {
+        <div class="card col-sm-6 col-md-4 col-lg-3">
+            <img src="/images/modelImage/@item.ProfilePhotoPath" alt="" class="card-img-top img-thumbnail h-50 modelProfile">
+            <div class="card-header">
+                <h4 class="card-title">@item.FirstName @item.LastName </h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item">Height: @item.Height</li>
+                    <li class="list-group-item">Weight: @item.Weight</li>
+                    <li class="list-group-item">Eye Color: @item.EyeColor</li>
+                    <li class="list-group-item">Hair Color: @item.HairColor</li>
+                    <li class="list-group-item">Body Size: @item.BodySize</li>
+                </ul>
+            </div>
+            <a class="btn btn-primary" asp-action="ModelDetails" asp-route-id="@item.ID">Details</a>         
+        </div>        
+
+        }
+
+
+
+    </div>
+</div>

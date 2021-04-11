@@ -1,0 +1,57 @@
+﻿@model AppUserRole
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header col-lg-9">
+        <div class="row">
+            <div class="col-md-9 text-blue">
+                <span>User List For Role:  @Model.Name</span>
+            </div>
+            <div class="col-md-3 text-right">
+                <a asp-action="Index" asp-controller="Role" class="btn btn-default">Back to List</a>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="col-lg-9">
+            <table id="roleTable" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var user in TempData["users"] as List<AppUser>)
+                    {
+                    <tr>
+                        <td>@user.UserName</td>
+                        <td>@user.FirstName</td>
+                        <td>@user.LastName</td>
+                        <td>@user.Email</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script>
+
+        $(document).ready(function () {
+            $('#roleTable').DataTable();
+        });
+
+    </script>
+
+}
+
+

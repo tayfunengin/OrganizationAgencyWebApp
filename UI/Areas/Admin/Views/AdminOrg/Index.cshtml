@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Organization>
+@{
+    ViewData["Title"] = "Organization List";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<div class="card">
+    <div class="card-header col-lg-9">
+        <div class="row">
+            <div class="col-lg-9">
+                <span>Organization List</span>
+            </div>         
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="col-lg-9">
+            <table id="organizationTable" class="table table-striped table-responsive">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Organization Name</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Days</th>
+                        <th>City</th>
+                        <th>Required Model Count</th>
+                        <th>Budget</th>
+                        <th>Status</th>
+                        <th>Number of Models To Be Assigned</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var org in Model)
+                    {
+                        <tr>
+                            <td>@org.ID</td>
+                            <td>@org.OrganizationName</td>
+                            <td>@org.StartDate.ToShortDateString()</td>
+                            <td>@org.EndDate.ToShortDateString()</td>
+                            <td>@org.NumberOfDays</td>
+                            <td>@org.City</td>
+                            <td>@org.CountOfModels</td>
+                            <td>@org.Budget</td>
+                            <td>@org.OrgStatus</td>
+                            <td>@org.ModelCountToBeAssigned</td>
+                            <td class="text-center">
+                                <a asp-action="Details" asp-controller="AdminOrg" asp-route-id="@org.ID" class="btn btn-sm btn-warning">Details</a>
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+      
+    </div>
+</div>
+
+
+@section scripts{
+    <script>
+
+        $(document).ready(function () {
+            $('#organizationTable').DataTable();
+        });
+
+    </script>
+
+}
+

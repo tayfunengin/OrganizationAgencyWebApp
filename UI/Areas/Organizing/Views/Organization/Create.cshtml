@@ -1,0 +1,116 @@
+﻿@model Organization 
+@{
+    ViewData["Title"] = "Create Organization";
+    Layout = "~/Areas/Organizing/Views/Shared/_OrganizingLayout.cshtml";
+}
+
+
+<div class="card">
+
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-9">
+                <span>Add Organization</span>
+            </div>
+            <div class="col-md-3 text-right">
+                <a asp-action="Index" asp-controller="Organization" class="btn btn-default btn-sm">Back To List</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card-body">
+            <form method="post">
+                <div class="form-group">
+                    <label>Organization Name</label>
+                    <span class="text-danger" asp-validation-for="OrganizationName"></span>
+                    <input type="text" asp-for="OrganizationName" class="form-control" />
+                </div>
+                <div class="form-group ">
+                    <label>Start Date</label>
+                    <span class="text-danger" asp-validation-for="StartDate"></span>
+                    <input type="date" asp-for="StartDate" class="form-control" />
+                </div>
+                <div class="form-group ">
+                    <label>End Date</label>
+                    <span class="text-danger" asp-validation-for="EndDate"></span>
+                    <input type="date" asp-for="EndDate" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <span class="text-danger" asp-validation-for="City"></span>
+                    <select id="inputState" class="form-control" asp-for="City">
+                     
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Model Count</label>
+                    <span class="text-danger" asp-validation-for="CountOfModels"></span>
+                    <input type="number" min="1" asp-for="CountOfModels" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Budget</label>
+                    <span class="text-danger" asp-validation-for="Budget"></span>
+                    <input type="text" asp-for="Budget" class="form-control" />
+                </div>
+                <button type="submit" id="submit" class="btn btn-success">Create</button>
+            </form>
+
+        </div>
+    </div>
+
+
+
+
+</div>
+
+@section scripts{ 
+
+<script>
+    $(function () {
+
+        $.ajax({
+            type: "Get",
+            url: "/dashboard/json/cities.json",
+            contentType: "application/json; charset=UTF-8",
+            dataType: "Json",
+            success: function (data) {
+                    $.each(data, function (value, index) {
+                    $("#inputState").append("<option value='"+index.name+"'>"+ index.name +"</option>")
+                })
+            }
+        })
+
+      
+
+        $("form").submit(function (e) {
+
+            var sDate = new Date($('#StartDate').val())
+            var eDate = new Date($('#EndDate').val())
+
+            if (!(eDate-sDate))
+            {
+                if ((eDate - sDate)!= 0)
+
+                {
+                    alert("Start date or end date can not be empty!")
+                    e.preventDefault();
+                }               
+            }
+
+            if (sDate > eDate) {
+                alert("End date can not be earlier than start date!")
+                e.preventDefault();
+            } 
+            
+        });
+
+
+    })
+
+
+</script>
+
+
+
+}

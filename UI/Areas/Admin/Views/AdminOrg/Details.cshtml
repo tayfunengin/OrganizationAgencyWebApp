@@ -1,0 +1,71 @@
+﻿@model Organization
+@{
+    ViewData["Title"] = "Organization Details";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-6">
+                        <span>
+                            Organization : <span class="text-secondary">@Model.OrganizationName</span> -  Budget: <span class="text-secondary">@Model.Budget</span>
+                            <br />
+                            City: <span class="text-secondary">@Model.City </span>
+                        </span>
+                    </div>
+                    <div class="col-md-6">
+                        <span>Start Date : <span class="text-secondary">@Model.StartDate.ToShortDateString()</span> -  End Date: <span class="text-secondary">@Model.EndDate.ToShortDateString()</span></span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-3 text-right">
+                <a asp-action="Index" asp-controller="AdminOrg" class="btn btn-default">Back to Org. List</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="card-body">
+        <table id="organizationDetailTable" class="table table-striped table-responsive">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Model Name</th>
+                    <th>Model Surname</th>
+                    <th>Model Category</th>                   
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Models)
+                {
+
+
+                    <tr>
+                        <td>
+                            @item.ID
+                        </td>
+                        <td>@item.FirstName</td>
+                        <td>@item.LastName</td>
+                        <td>@item.Category</td>                      
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+@section scripts{
+    <script>
+
+        $(document).ready(function () {
+            $('#organizationDetailTable').DataTable();
+        });
+
+    </script>
+
+}

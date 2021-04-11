@@ -1,0 +1,25 @@
+﻿@model Model
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/Organizing/Views/Shared/_OrganizingLayout.cshtml";
+}
+
+<div class="card text-center">
+    <div class="card-header">
+        <h5>Delete Transaction</h5>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            <p>
+                @Model.FirstName @Model.LastName isimli modeli silmek istediğinize emin misiniz?
+            </p>
+            <button type="submit" class="btn btn-primary">Evet</button>
+            <a asp-action="Index" class="btn" >Hayır</a>
+           
+        </form>
+
+    </div>
+</div>
+
+
+

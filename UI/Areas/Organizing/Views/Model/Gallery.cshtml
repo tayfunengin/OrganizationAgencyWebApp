@@ -1,0 +1,81 @@
+﻿@model Model
+@{
+    ViewData["Title"] = "Photo Gallery";
+    Layout = "~/Areas/Organizing/Views/Shared/_OrganizingLayout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <h5>Model: @Model.FirstName @Model.LastName</h5>            
+        </div>
+        <div class="col-md-3 text-right">
+            <a class="btn btn-default" asp-action="Details" asp-controller="Model" asp-route-id="@Model.ID"> Back to Details </a>
+            <a class="btn btn-primary" asp-action="AddPhoto" asp-controller="Model" asp-route-modelId="@Model.ID"> Add Photo </a>
+        </div>
+    </div>
+    <div class="row mt-3">
+
+        @if (Model.PhotoGraphies.Count == 0)
+        {
+            <div class="text-center">
+                <span class="alert-info">
+                    Galery is empty.
+                </span>
+            </div>
+        }
+        else
+        {
+            
+    <div class="card-columns">
+        @foreach (var photo in Model.PhotoGraphies)
+        {
+
+
+            <div class="card">
+                <div class="card-header">
+                    @photo.Title
+                </div>
+                <img src="/images/modelImage/@photo.Path" alt="" class="card-img-top img-thumbnail modelProfile">
+
+                <div class="card-footer">
+                    <div class="text-right">
+                        <a asp-action="DeletePhoto" asp-controller="Model" asp-route-id="@photo.Id" asp-route-modelId="@Model.ID" class="btn btn-danger btn-sm delete">Delete Photo</a>
+                    </div>
+                </div>
+
+            </div>
+        }
+
+    </div>
+
+         
+        }
+
+    </div>
+
+</div>
+
+@section scripts
+{ 
+
+    <script>
+
+        $(function(){         
+
+            $(".delete").click(function(e){          
+                var isOK = confirm("Do you want to delete the photo?")
+
+            if (!isOK) {
+                e.preventDefault();
+            }        
+        })
+
+        })
+
+
+    </script>
+
+
+} 

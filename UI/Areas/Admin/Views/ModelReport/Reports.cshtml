@@ -1,0 +1,79 @@
+﻿@model List<Report>
+@{
+    ViewData["Title"] = "Reports";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+
+    Model entityModel = TempData["model"] as Model;
+}
+
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-6">
+                        <span class="text-secondary">First Name: </span> <span>@entityModel.FirstName</span> - <span class="text-secondary">Last Name: </span> <span>@entityModel.LastName</span>
+                    </div>
+                    <div class="col-md-6">
+                        <span class="text-secondary">Category:</span> <span>@entityModel.Category</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 text-right">
+                <a asp-action="Index" asp-controller="ModelReport" class="btn btn-default">Back to Model List</a>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <table id="organizationTable" class="table table-striped table-responsive">
+            <thead>
+                <tr>
+
+                    <th>Organization Name</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Location</th>
+                    <th>Org. Revenue</th>
+                    <th>Days</th>
+                    <th>Paid to Model</th>
+                    <th>Org. Status</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var report in Model)
+                {
+                    <tr>
+
+                        <td>
+                            @Html.ActionLink(report.Organization.OrganizationName, "Details", "Organization", new { id = report.Organization.ID })
+                        </td>
+                        <td>@report.Organization.StartDate.ToShortDateString()</td>
+                        <td>@report.Organization.EndDate.ToShortDateString()</td>
+                        <td>@report.Location</td>
+                        <td>@report.Revenue.ToString("#,##0.00") TL</td>
+                        <td>@report.Organization.NumberOfDays</td>
+                        <td>
+                            @if (entityModel.Category == Domain.Enums.ModelCategory.One)
+                            {
+                                @report.Wage1Total
+                            }
+                            else if (entityModel.Category == Domain.Enums.ModelCategory.Two)
+                            {
+                                @report.Wage2Total
+                            }
+                            else if (entityModel.Category == Domain.Enums.ModelCategory.Three)
+                            {
+                                @report.Wage3.ToString("#,##0.00")
+                            }
+                            TL
+                        </td>
+                        <td>@report.Organization.OrgStatus</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+

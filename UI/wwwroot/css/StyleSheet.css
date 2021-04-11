@@ -1,0 +1,20 @@
+﻿body {
+    font-family: 'Aleo', serif;
+}
+
+
+#service .card:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+img.modelProfile{
+
+    object-fit:contain;
+}
+
+ul.navbar-var:hover .nav-link {
+    font-weight: bolder;
+    
+}
+

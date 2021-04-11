@@ -1,0 +1,132 @@
+﻿@model Report
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-6">
+                        <span class="text-secondary">Organization: </span> <span>@Model.Organization.OrganizationName</span> - <span class="text-secondary">Budget: </span> <span>@Model.Budget.ToString("#,##0.00") TL</span>
+                    </div>
+                    <div class="col-md-6">
+                        <span class="text-secondary">Location:</span> <span>@Model.Location</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 text-right">
+                <a asp-action="Index" asp-controller="OrganizationReport" class="btn btn-default">Back to Org. List</a>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <table id="organizationDetailTable" class="table table-striped table-responsive">
+                <thead>
+                    <tr>
+                        <th>Model Name</th>
+                        <th>Model Surname</th>
+                        <th>Model Category</th>
+                        <th>Days</th>
+                        <th>Accommodation</th>
+                        <th>Food</th>
+                        <th>Wage</th>
+                        <th>Total Payment</th>
+                        <th>Total Expense</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Organization.Models)
+                    {
+
+                        <tr>
+                            <td>@item.FirstName</td>
+                            <td>@item.LastName</td>
+                            <td>@item.Category</td>
+                            <td>@Model.Organization.NumberOfDays</td>
+                            <td>
+                                @Model.Accommodation
+                            </td>
+                            <td>
+                                @Model.Food
+                            </td>
+                            <td>
+                                @if (item.Category == Domain.Enums.ModelCategory.One)
+                                {
+                                    @Model.Wage1
+                                } 
+                                else if (item.Category == Domain.Enums.ModelCategory.Two)
+                                {
+                                    @Model.Wage2
+                                }
+                                else if (item.Category == Domain.Enums.ModelCategory.Three)
+                                {
+                                    @Model.Wage3.ToString("#,##0.00")
+                                }
+                                TL
+                            </td>
+                            <td>
+                                @if (item.Category == Domain.Enums.ModelCategory.One)
+                                {
+                                    @Model.Wage1Total
+                                }
+                                else if (item.Category == Domain.Enums.ModelCategory.Two)
+                                {
+                                    @Model.Wage2Total
+                                }
+                                else if (item.Category == Domain.Enums.ModelCategory.Three)
+                                {
+                                    @Model.Wage3.ToString("#,##0.00")
+                                }
+                                TL
+                            </td>
+                            <td class="text-right">
+                                @Model.Expense TL
+                            </td>
+                        </tr>
+
+                    }
+                    <tr>
+                        <td colspan="7" class="text-right text-bold">
+                            Total
+                        </td>
+                        <td>@Model.TotalWage.ToString("#,##0.00") TL</td>
+                        <td class="text-right">@Model.TotalExpense TL</td>
+                    </tr>
+                    <tr>
+                        <td colspan="7" class="text-right text-bold">
+                            General Total
+                        </td>
+                        <td colspan="2" class="text-right">
+                            @Model.TotalExpenseAndWage.ToString("#,##0.00") TL
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="text-primary text-right">
+                            Revenue
+                        </td>
+                        <td colspan="3" class="text-right">
+                            @Model.Budget.ToString("#,##0.00") - @Model.TotalExpenseAndWage.ToString("#,##0.00") = @Model.Revenue.ToString("#,##0.00") TL
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+
+        $(document).ready(function () {
+            $('#organizationDetailTable').DataTable();
+        });
+
+    </script>
+
+}
+

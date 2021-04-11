@@ -1,0 +1,176 @@
+﻿@model Model
+@{
+    ViewData["Title"] = "Model Details";
+    Layout = "~/Areas/Organizing/Views/Shared/_OrganizingLayout.cshtml";
+    Organization org = ViewData["org"] as Organization;
+}
+
+<div class="row">
+
+
+
+    <div class="col-md-6">
+        <div class="card bg-secondary">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-9">
+                        <span>@Model.FirstName @Model.LastName </span>
+                    </div>
+                    <div class="col-md-3 text-right">
+                        <a asp-action="AssignModel" asp-controller="Organization" asp-route-id="@org.ID" class="btn btn-default btn-sm">Back To List</a>
+                    </div>
+                </div>
+            </div>
+            <img src="/images/modelImage/@Model.ProfilePhotoPath" class="car-img w-50 mx-auto" />
+
+            <div class="card-body">
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>Name :</td>
+                            <td>@Model.FirstName</td>
+                        </tr>
+                        <tr>
+                            <td>LastName :</td>
+                            <td>@Model.LastName</td>
+                        </tr>
+                        <tr>
+                            <td>Address :</td>
+                            <td>@Model.Adres</td>
+                        </tr>
+                        <tr>
+                            <td>Email :</td>
+                            <td>@Model.Email</td>
+                        </tr>
+                        <tr>
+                            <td>Tel :</td>
+                            <td>@Model.Tel</td>
+                        </tr>
+                        <tr>
+                            <td>Gender :</td>
+                            <td>
+                                @Model.Gender
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>BirthDate :</td>
+                            <td>@Model.Birthdate</td>
+                        </tr>
+
+                        <tr>
+                            <td>Shoe Number :</td>
+                            <td>@Model.ShoeNumber</td>
+                        </tr>
+                        <tr>
+                            <td>Body Size :</td>
+                            <td>@Model.BodySize</td>
+                        </tr>
+                        <tr>
+                            <td>Weight :</td>
+                            <td>@Model.Weight</td>
+                        </tr>
+                        <tr>
+                            <td>Height- cm :</td>
+                            <td>@Model.Height</td>
+                        </tr>
+
+                        <tr>
+                            <td>EyeColor :</td>
+                            <td>@Model.EyeColor.ToString()</td>
+                        </tr>
+                        <tr>
+                            <td>Hair Color :</td>
+                            <td>@Model.HairColor</td>
+                        </tr>                     
+                        <tr>
+                            <td>Has Friver Licence:</td>
+                            <td>
+                                @if (Model.HasDriverLicence)
+                                {
+                                    <label>Yes</label>
+                                    <input type="checkbox" value="Yes" checked />
+                                }
+                                else
+                                {
+                                    <label>No</label>
+
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Foreign Language :</td>
+                            <td>@Model.ForeignLanguage.ToString()</td>
+                        </tr>
+
+                        <tr>
+                            <td>Note :</td>
+                            <td>@Model.Note</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-6">
+        <div class="card-header">
+            <h5>Organizations List that @Model.FirstName Participated</h5>
+        </div>
+        <div class="card-body">
+            <table id="organizationTable" class="table table-striped">
+                <thead>
+                    <tr>
+
+                        <th>Organization Name</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>City</th>
+                        <th>Budget</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Organizations)
+                    {
+                        <tr>
+
+                            <td>
+                                @Html.ActionLink(item.OrganizationName, "Index", "OrganizationDetail", new { area = "admin", id = org.ID })
+                            </td>
+                            <td>@item.StartDate.ToShortDateString()</td>
+                            <td>@item.EndDate.ToShortDateString()</td>
+                            <td>@item.Budget</td>
+                            <td>@item.OrgStatus</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+
+        $(document).ready(function () {
+            $('#organizationTable').DataTable();
+        });
+
+    </script>
+
+}

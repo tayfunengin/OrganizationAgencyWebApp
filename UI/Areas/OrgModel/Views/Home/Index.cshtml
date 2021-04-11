@@ -1,0 +1,58 @@
+﻿@model Model 
+@{
+    ViewData["Title"] = "Profile";
+    Layout = "~/Areas/OrgModel/Views/Shared/_OrgModelLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-lg-9">
+                <span>Model: @Model.FirstName</span>        
+             </div>
+
+        </div>
+   </div>
+    <div class="card-body">
+        <div class="col-lg-9">
+            <table id="modelTable" class="table table-striped table-responsive">
+                <thead>
+                    <tr>                      
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Surname</th>                  
+                        <th>Eye Color</th>
+                        <th>Hair Color</th>
+                        <th>Height</th>
+                        <th>Weight</th>
+                        <th>Body Size</th>                    
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>                       
+                        <td>
+                            @Model.ID
+                        </td>
+                        <td>@Model.FirstName</td>
+                        <td>@Model.LastName</td>                  
+                        <td>@Model.EyeColor</td>
+                        <td>@Model.HairColor</td>
+                        <td>@Model.Height</td>
+                        <td>@Model.Weight</td>
+                        <td>@Model.BodySize</td>               
+                        <td class="col-2">
+                            <div class="row">
+                                <a asp-action="Edit" asp-controller="Home" asp-route-id="@Model.ID" class="btn btn-sm btn-warning">Update</a>
+                                <a asp-action="Details" asp-controller="Home" asp-route-id="@Model.ID" class="btn btn-sm btn-success">Details</a>
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

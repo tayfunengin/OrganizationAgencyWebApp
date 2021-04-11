@@ -1,0 +1,182 @@
+﻿@model Model
+@{
+    ViewData["Title"] = "Model Details";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="row">
+
+    <div class="col-md-6">
+        <div class="card bg-secondary">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-9">
+                        <span>@Model.FirstName @Model.LastName </span>
+                    </div>
+                    <div class="col-md-3 text-right">
+                       <a asp-action="Gallery" asp-controller="AdminModel" asp-route-id="@Model.ID" class="btn btn-primary">Photo Gallery</a>
+                    </div>
+                </div>
+            </div>
+            <img src="/images/modelImage/@Model.ProfilePhotoPath" class="car-img w-50 mx-auto" />
+
+            <div class="card-body">
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>Name :</td>
+                            <td>@Model.FirstName</td>
+                        </tr>
+                        <tr>
+                            <td>LastName :</td>
+                            <td>@Model.LastName</td>
+                        </tr>
+                        <tr>
+                            <td>Address :</td>
+                            <td>@Model.Adres</td>
+                        </tr>
+                        <tr>
+                            <td>Email :</td>
+                            <td>@Model.Email</td>
+                        </tr>
+                        <tr>
+                            <td>Tel :</td>
+                            <td>@Model.Tel</td>
+                        </tr>
+                        <tr>
+                            <td>Gender :</td>
+                            <td>
+                                @Model.Gender
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>BirthDate :</td>
+                            <td>@Model.Birthdate.ToShortDateString()</td>
+                        </tr>
+
+                        <tr>
+                            <td>Shoe Number :</td>
+                            <td>@Model.ShoeNumber</td>
+                        </tr>
+                        <tr>
+                            <td>Body Size :</td>
+                            <td>@Model.BodySize</td>
+                        </tr>
+                        <tr>
+                            <td>Weight :</td>
+                            <td>@Model.Weight</td>
+                        </tr>
+                        <tr>
+                            <td>Height- cm :</td>
+                            <td>@Model.Height</td>
+                        </tr>
+
+                        <tr>
+                            <td>EyeColor :</td>
+                            <td>@Model.EyeColor.ToString()</td>
+                        </tr>
+                        <tr>
+                            <td>Hair Color :</td>
+                            <td>@Model.HairColor</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Has Driver Licence:</td>
+                            <td>
+                                @if (Model.HasDriverLicence)
+                                {
+                                    <label>Yes</label>
+                                    <input type="checkbox" value="Yes" checked />
+                                }
+                                else
+                                {
+                                    <label>No</label>
+
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Foreign Language :</td>
+                            <td>@Model.ForeignLanguage.ToString()</td>
+                        </tr>
+                        <tr>
+                            <td>Note :</td>
+                            <td>@Model.Note</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-6">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-9">
+                    <h5 class="text-dark">Organizations that @Model.FirstName Participated</h5>
+                </div>
+                <div class="col-md-3 text-right">
+                    <a asp-action="Index" asp-controller="AdminModel" class="btn btn-default btn-sm">Back To Model List</a>
+                </div>
+            </div>          
+        </div>
+        <div class="card-body">
+            <table id="organizationTable" class="table table-striped">
+                <thead>
+                    <tr>
+
+                        <th>Organization Name</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>City</th>
+                        <th>Status</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var org in Model.Organizations)
+                    {
+                        <tr>
+
+                            <td>
+                                @Html.ActionLink(org.OrganizationName, "Details", "Organization", new { area = "admin", id = org.ID })
+                            </td>
+                            <td>@org.StartDate.ToShortDateString()</td>
+                            <td>@org.EndDate.ToShortDateString()</td>
+                            <td>@org.City</td>
+                            <td>@org.OrgStatus</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script>
+
+        $(document).ready(function () {
+            $('#organizationTable').DataTable();
+        });
+
+    </script>
+
+}
+

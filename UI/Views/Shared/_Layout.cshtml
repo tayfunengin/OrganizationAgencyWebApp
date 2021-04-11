@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - UI</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/plugins/toastr/toastr.css" rel="stylesheet" />
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light mb-0 fixed-top">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <div>
+                        <img src="/images/logo/logo.png" alt="" class="d-sm-none" style="height:30px;" />
+                    </div>
+                    <span class="d-none d-sm-block">My Agency </span>
+                    
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-0">
+
+                        @if (TempData["login"] != null)
+                        {
+
+
+                            <span class="text-muted">Welcome! <br /> @TempData["login"]</span>
+
+                            if ( TempData["role"].ToString()  == "Model")
+                            {
+                                <li class="nav-item ml-1">
+                                    <a asp-action="Login" asp-controller="Account" class="btn btn-outline-primary nav-link">Profile</a>
+                                </li>
+                                <li class="nav-item ml-1">
+                                    <a class="btn btn-outline-success nav-link" asp-action="LogOut" asp-controller="Account">LogOut</a>
+                                </li>
+                            }
+                            else if (TempData["role"].ToString() == "Member") 
+                            {
+                                <li class="nav-item ml-1">
+                                    <a class="btn btn-outline-success nav-link" asp-action="LogOut" asp-controller="Account">LogOut</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item ml-1">
+                                    <a asp-action="Login" asp-controller="Account" class="btn btn-outline-secondary nav-link">Admin Panel</a>
+                                </li>
+                                <li class="nav-item ml-1">
+                                    <a class="btn btn-outline-success nav-link" asp-action="LogOut" asp-controller="Account">LogOut</a>
+                                </li>
+                            }
+
+                        }
+                        else
+                        {
+
+                            <li class="nav-item ml-1 mt-1">
+                                <a class="btn btn-outline-primary nav-link" asp-action="Register" asp-controller="Account">Register</a>
+                            </li>
+                            <li class="nav-item ml-1 mt-1">
+                                <a class="btn btn-outline-success nav-link" asp-action="Login" asp-controller="Account" >Login</a>                              
+                            </li>
+
+                        }
+
+                    </ul>
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Service">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Model">Models</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+
+    @RenderBody()
+
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - MyAgency - Privacy
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/plugins/toastr/toastr.min.js"></script>
+
+    @Html.Partial("_NotificationPartial")
+    @RenderSection("Scripts", required: false)
+
+  
+</body>
+</html>

@@ -1,0 +1,51 @@
+﻿@model Model 
+@{
+    ViewData["Title"] = "Gallery";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <h5>Model: @Model.FirstName @Model.LastName</h5>
+        </div>
+        <div class="col-md-3 text-right">
+            <a class="btn btn-default" asp-action="Details" asp-controller="AdminModel" asp-route-id="@Model.ID"> Back to Details </a>
+        </div>
+    </div>
+    <div class="row mt-3">
+
+        @if (Model.PhotoGraphies.Count == 0)
+        {
+            <div class="text-center">
+                <span class="alert-info">
+                    Galery is empty.
+                </span>
+            </div>
+        }
+        else
+        {
+
+            <div class="card-columns">
+                @foreach (var photo in Model.PhotoGraphies)
+                {
+
+
+                    <div class="card">
+                        <div class="card-header">
+                            @photo.Title
+                        </div>
+                        <img src="/images/modelImage/@photo.Path" alt="" class="card-img-top img-thumbnail modelProfile">
+
+                    </div>
+                }
+
+            </div>
+
+
+        }
+
+    </div>
+
+</div>
+

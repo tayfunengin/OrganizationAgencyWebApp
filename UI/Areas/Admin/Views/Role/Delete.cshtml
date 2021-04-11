@@ -1,0 +1,21 @@
+﻿@model  AppUserRole
+@{
+    ViewData["Title"] = "Delete Role";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="container">
+    <div class="text-center">
+        <div class="card">
+            <div class="card-header">
+                <form asp-action="Delete">
+                    <h3>Role: @Model.Name</h3>
+                    <p>Do you want to delete?</p>
+                    <button type="submit" class="btn btn-danger">Yes</button>
+                    <a asp-action="Index" asp-controller="Role" class="btn btn-default">No</a>                   
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

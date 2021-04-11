@@ -1,0 +1,23 @@
+﻿@model Organization 
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/Organizing/Views/Shared/_OrganizingLayout.cshtml";
+}
+
+<div class="card text-center">
+    <div class="card-header">
+        <h5>Delete Transaction</h5>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            <p>
+                Do you want to delete organizaton: @Model.OrganizationName?
+            </p>
+            <button type="submit" class="btn btn-primary">Yes</button>
+            <a asp-action="Index" class="btn btn-default" >No</a>
+           
+        </form>
+
+    </div>
+</div>
+

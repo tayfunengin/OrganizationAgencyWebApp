@@ -1,0 +1,84 @@
+﻿@model IEnumerable<Model>
+@{
+    ViewData["Title"] = "AssingModel";
+    Layout = "~/Areas/Organizing/Views/Shared/_OrganizingLayout.cshtml";
+    Organization org = ViewData["org"] as Organization;
+
+}
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-lg-9">
+                <span>
+                    Assign Model For Organization : <span class="text-primary">@Html.ActionLink(org.OrganizationName, "Details", "Organization", new { id = org.ID }) </span> -  Required Model Count To Be Assigned: <span class="text-secondary">@org.ModelCountToBeAssigned</span> <br />
+                    City: <span class="text-secondary">@org.City</span>
+                </span>
+            </div>
+            <div class="col-md-3 text-right">
+                <a asp-action="Index" asp-controller="Organization" class="btn btn-default btn-sm">Back To Org. List</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="card-body">
+        <table id="modelTable" class="table table-striped">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Eye Color</th>
+                    <th>Hair Color</th>
+                    <th>Height</th>
+                    <th>Weight</th>
+                    <th>Foreign Language</th>
+                    <th>Category</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        <img src="~/images/modelImage/@item.ProfilePhotoPath" alt="@item.FirstName" class="card-img" />
+
+                    </td>
+                    <td>
+                        @item.ID
+                    </td>
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    <td>@item.EyeColor</td>
+                    <td>@item.HairColor</td>
+                    <td>@item.Height</td>
+                    <td>@item.Weight</td>
+                    <td>@item.ForeignLanguage</td>
+                    <td>@item.Category</td>
+
+                    <td class="col-2">
+                        <div class="row">
+                            <a asp-action="DetailsModel" asp-controller="Organization" asp-route-id="@item.ID" asp-route-orgId="@org.ID" class="btn btn-sm btn-success">Details</a> |
+                            <a asp-action="AssignModelToOrg" asp-controller="Organization" asp-route-id="@item.ID" asp-route-orgId="@org.ID" class="btn btn-sm btn-warning">Assign</a>
+                        </div>
+
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+@section scripts{
+    <script>
+
+        $(document).ready(function () {
+            $('#modelTable').DataTable();
+        });
+
+    </script>
+
+}

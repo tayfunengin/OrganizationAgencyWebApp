@@ -1,0 +1,32 @@
+﻿@model AppUserRole   
+@{
+    ViewData["Title"] = "Role Edit";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="card col-lg-6">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-9">
+                <h5>Update the Role</h5>
+            </div>
+            <div class="col-md-3 text-right">
+                <a asp-action="Index" asp-controller="Role" class="btn btn-default">Back to List</a>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <form asp-action="Edit" asp-controller="Role" method="post">
+            <div class="form-group">
+                <label>Role Name:</label>
+                <input asp-for="Name"  type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Description:</label>
+                <input asp-for="Description" type="text" class="form-control" />
+            </div>
+            <button class="btn btn-primary" type="submit">Update Role</button>
+        </form>
+    </div>
+</div>
+
