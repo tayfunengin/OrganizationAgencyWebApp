@@ -16,7 +16,7 @@ Uygulama Code First Data-Access yönetimi ile hazırlanmıştır. Connection str
 Uygulama açıldığında package manager console' a add-migration ve sonrasında update-database komutları yazılarak veritabanı oluşturulur.
 
 #### Roller
-* Admin - Kullanıcı ve rol tanımlayabilir. Organiasyon ve modellerin detaylarını görüntüleyebilir. Organizasyon ve modele göre satış raporlarını görebilir.
+* Admin - Kullanıcı ve rol tanımlayabilir. Organizasyon ve modellerin detaylarını görüntüleyebilir. Organizasyon ve modele göre satış raporlarını görebilir.
 * Organization - Organizasyon ve modelleri sisteme tanımlama ve CRUD işlemlerini yapabilme yetkisi vardır. Organizasyonlara model atamasını yapar. 
 * Report - Muhasebe satış rapolarını görüntüler.
 * Model - Kendisine ait profil sayfasına erişebilir ve temel bilgilerini güncelleyebilir.
