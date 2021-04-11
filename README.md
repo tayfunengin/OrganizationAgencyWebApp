@@ -40,7 +40,7 @@ Modeller 3 farklı kategoriye ayrılmaktadır. Modellere her organizasyon için 
  
 Model ekledikten sonra details butonuna tıkladığınızda modelin tüm detaylarına, bugüne kadar katıldığı tüm organizasyon bilgilerine ulaşılabilir. Photo Gallery kısmından yeni fotoğraflar eklenebilir. Modelin galerisine eklenen fotoğraflar tanıtım sayfasında modeller kısmında da siteye üye olan kullanıcılara gösterilir.
 
-![image](https://user-images.githubusercontent.com/71972947/114286132-bdffd800-9a64-11eb-87f9-db20df9f5fb4.png)
+![image](https://user-images.githubusercontent.com/71972947/114290017-f2838c00-9a84-11eb-8d2d-6d56b5859bd6.png)
 
 Organization List kısmından gerçekleşecek olan orgnizasyonları sisteme ekleyebilirsiniz. Organizasyon statüleri 3 tanedir:
 * Pending - Heünüz başlamamış olanlar
