@@ -93,7 +93,7 @@ You can download the application directly to your computer from the download sec
 The application has been developped with Code First Data-Access method. Connection string: "DefaultConnection": "server = .; database = OrganizationAgencyDB; trusted_connection = true; MultipleActiveResultSets = true;".
 When the application is launched, the database is created by writing add-migration and then update-database commands to the package manager console.
 
-#### Roller
+#### Roles
 * Admin – Creates user and roles, can monitor details of organization & models also the reports generated based on model or organization.
 * Organization – Creates the organization & model and perform CRUD transactions. Can assign the models to organizations.
 * Report – Has access to the organization & model reports.
